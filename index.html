@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MUFI.DEV — Motion Design & Creative Development</title>
+  <meta name="description" content="Портфолио MUFI.DEV: motion-айдентика, кинетическая типографика, 3D-ролики и веб-анимация. Логотипы, которые двигаются.">
+  <meta name="theme-color" content="#07080b">
+  <meta property="og:title" content="MUFI.DEV — идеи, которые движутся">
+  <meta property="og:description" content="Motion design, creative development и анимированные логотипы.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/og.svg">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/unbounded-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/manrope-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body class="is-loading">
+  <a class="skip-link" href="#main">К содержимому</a>
+
+  <!-- Загрузочный экран: лепестки знака собираются в спираль -->
+  <div class="loader" id="loader" role="status" aria-label="Загрузка сайта">
+    <svg class="loader-mark" viewBox="0 0 200 200" aria-hidden="true">
+      <g class="loader-blades">
+        <g class="blade" style="--i:0"><use href="#blade" transform="rotate(0 100 100)"/></g>
+        <g class="blade" style="--i:1"><use href="#blade" transform="rotate(38 100 100) translate(100 100) scale(.92) translate(-100 -100)"/></g>
+        <g class="blade" style="--i:2"><use href="#blade" transform="rotate(76 100 100) translate(100 100) scale(.84) translate(-100 -100)"/></g>
+        <g class="blade" style="--i:3"><use href="#blade" transform="rotate(114 100 100) translate(100 100) scale(.76) translate(-100 -100)"/></g>
+        <g class="blade" style="--i:4"><use href="#blade" transform="rotate(152 100 100) translate(100 100) scale(.68) translate(-100 -100)"/></g>
+        <g class="blade" style="--i:5"><use href="#blade" transform="rotate(190 100 100) translate(100 100) scale(.60) translate(-100 -100)"/></g>
+        <g class="blade" style="--i:6"><use href="#blade" transform="rotate(228 100 100) translate(100 100) scale(.52) translate(-100 -100)"/></g>
+        <g class="blade" style="--i:7"><use href="#blade" transform="rotate(266 100 100) translate(100 100) scale(.44) translate(-100 -100)"/></g>
+        <g class="blade" style="--i:8"><use href="#blade" transform="rotate(304 100 100) translate(100 100) scale(.36) translate(-100 -100)"/></g>
+      </g>
+    </svg>
+    <span class="loader-word">MUFI.DEV</span>
+    <span class="loader-bar"><i></i></span>
+  </div>
+
+  <!-- Общие SVG-знаки -->
+  <svg class="svg-defs" aria-hidden="true" focusable="false">
+    <defs>
+      <path id="blade" d="M100 16 C146 16 184 54 184 100 C184 141 156 175 118 183 C146 165 164 135 164 100 C164 58 136 24 100 16 Z"/>
+      <linearGradient id="m-gradient" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#38d9ff"/>
+        <stop offset=".45" stop-color="#7c5cff"/>
+        <stop offset="1" stop-color="#ff4fa3"/>
+      </linearGradient>
+      <symbol id="logo-swirl" viewBox="0 0 200 200">
+        <use href="#blade" transform="rotate(0 100 100)"/>
+        <use href="#blade" transform="rotate(38 100 100) translate(100 100) scale(.92) translate(-100 -100)"/>
+        <use href="#blade" transform="rotate(76 100 100) translate(100 100) scale(.84) translate(-100 -100)"/>
+        <use href="#blade" transform="rotate(114 100 100) translate(100 100) scale(.76) translate(-100 -100)"/>
+        <use href="#blade" transform="rotate(152 100 100) translate(100 100) scale(.68) translate(-100 -100)"/>
+        <use href="#blade" transform="rotate(190 100 100) translate(100 100) scale(.60) translate(-100 -100)"/>
+        <use href="#blade" transform="rotate(228 100 100) translate(100 100) scale(.52) translate(-100 -100)"/>
+        <use href="#blade" transform="rotate(266 100 100) translate(100 100) scale(.44) translate(-100 -100)"/>
+        <use href="#blade" transform="rotate(304 100 100) translate(100 100) scale(.36) translate(-100 -100)"/>
+      </symbol>
+      <symbol id="logo-triangle" viewBox="0 0 200 200">
+        <path fill-rule="evenodd" d="M100 18 L188 178 H12 Z M100 66 L52 154 H148 Z"/>
+        <path d="M12 178 H70 L58 154 H25 Z" opacity=".9"/>
+      </symbol>
+      <symbol id="logo-m" viewBox="0 0 200 200">
+        <path d="M38 158 V72 C38 48 58 42 70 62 L96 112 C100 120 104 120 108 112 L134 62 C146 42 166 48 166 72 V158"
+              fill="none" stroke="url(#m-gradient)" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <filter id="lab-glow" x="-60%" y="-60%" width="220%" height="220%">
+        <feGaussianBlur stdDeviation="6" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+  </svg>
+
+  <div class="grain" aria-hidden="true"></div>
+  <div class="ambient" aria-hidden="true">
+    <span class="orb orb-a"></span>
+    <span class="orb orb-b"></span>
+    <span class="orb orb-c"></span>
+  </div>
+
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="MUFI.DEV — наверх">
+        <svg viewBox="0 0 200 200" aria-hidden="true"><use href="#logo-swirl"/></svg>
+        <span>MUFI<b>.DEV</b></span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Меню</span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+        <a href="#works">Работы</a>
+        <a href="#lab">Motion Lab</a>
+        <a href="#services">Услуги</a>
+        <a href="#about">Обо мне</a>
+        <a href="#contact">Контакт</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="motion-toggle" aria-pressed="true" title="Включить или выключить анимации">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path class="ic-pause" d="M8 5v14M16 5v14"/><path class="ic-play" d="M8 5l11 7-11 7z"/></svg>
+          <span class="sr-only">Анимации</span>
+        </button>
+        <a class="btn btn-primary btn-sm" href="#contact">Обсудить проект</a>
+      </div>
+    </div>
+    <span class="scroll-progress" id="scroll-progress"></span>
+  </header>
+
+  <main id="main">
+    <span id="top"></span>
+
+    <section class="hero section" id="hero" data-section>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow reveal">Motion design · Creative development</p>
+          <h1 class="hero-title" aria-label="Идеи, которые движутся">
+            <span class="line"><i>Идеи,</i></span>
+            <span class="line"><i>которые</i></span>
+            <span class="line"><i class="grad">движутся.</i></span>
+          </h1>
+          <p class="lead reveal">Собираю айдентику, типографику и интерфейсы в живые системы. Логотип не просто появляется — он ведёт себя, дышит и запоминается.</p>
+          <div class="hero-cta reveal">
+            <a class="btn btn-primary" href="#works">Смотреть работы <span aria-hidden="true">↓</span></a>
+            <a class="btn btn-ghost" href="#lab">Поиграть со знаком</a>
+          </div>
+          <ul class="hero-stats reveal" aria-label="Коротко о подходе">
+            <li><b>60 fps</b><span>плавность по умолчанию</span></li>
+            <li><b>0</b><span>тяжёлых зависимостей</span></li>
+            <li><b>SVG</b><span>знаки без потери качества</span></li>
+          </ul>
+        </div>
+
+        <div class="hero-stage reveal" data-parallax="0.12" aria-label="Анимированный знак MUFI">
+          <div class="stage-glow"></div>
+          <span class="ring ring-1"></span>
+          <span class="ring ring-2"></span>
+          <span class="ring ring-3"></span>
+          <svg class="hero-logo" viewBox="0 0 200 200" aria-hidden="true"><use href="#logo-swirl"/></svg>
+          <span class="chip chip-a">SVG</span>
+          <span class="chip chip-b">CSS</span>
+          <span class="chip chip-c">JS</span>
+          <span class="chip chip-d">60fps</span>
+          <span class="stage-caption">MUFI / MOTION SYSTEM 001</span>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#works" aria-label="К работам"><span></span></a>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-group"><span>MOTION IDENTITY</span><i>✳</i><span>KINETIC TYPE</span><i>✳</i><span>3D LOOPS</span><i>✳</i><span>WEB ANIMATION</span><i>✳</i><span>LOGO BEHAVIOUR</span><i>✳</i></div>
+        <div class="marquee-group"><span>MOTION IDENTITY</span><i>✳</i><span>KINETIC TYPE</span><i>✳</i><span>3D LOOPS</span><i>✳</i><span>WEB ANIMATION</span><i>✳</i><span>LOGO BEHAVIOUR</span><i>✳</i></div>
+      </div>
+    </div>
+
+    <section class="section works" id="works" data-section>
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Избранные работы</p>
+            <h2>Движение как часть смысла</h2>
+          </div>
+          <p class="section-note">Шесть концептов, собранных специально для этого портфолио. Нажмите на карточку — внутри живая анимация и разбор.</p>
+        </div>
+
+        <div class="filters reveal" role="group" aria-label="Фильтр работ">
+          <button class="filter is-active" data-filter="all" aria-pressed="true">Все</button>
+          <button class="filter" data-filter="identity" aria-pressed="false">Айдентика</button>
+          <button class="filter" data-filter="type" aria-pressed="false">Типографика</button>
+          <button class="filter" data-filter="3d" aria-pressed="false">3D / Loops</button>
+          <button class="filter" data-filter="ui" aria-pressed="false">UI / Web</button>
+        </div>
+
+        <div class="works-grid" id="works-grid">
+          <article class="work-card reveal" data-project="orbit" data-category="identity" style="--accent:#c8ff3d" role="button" tabindex="0" aria-haspopup="dialog">
+            <div class="work-preview preview-orbit" aria-hidden="true">
+              <span class="po-ring r1"></span><span class="po-ring r2"></span><span class="po-ring r3"></span>
+              <svg viewBox="0 0 200 200"><use href="#logo-swirl"/></svg>
+              <span class="po-dot d1"></span><span class="po-dot d2"></span><span class="po-dot d3"></span>
+              <span class="preview-tag">LOOP · 04s</span>
+            </div>
+            <div class="work-meta">
+              <span class="work-cat">Айдентика</span>
+              <h3>ORBIT — знак с орбитой</h3>
+              <p>Спираль MUFI как гравитационная система: частицы, кольца и инерция.</p>
+              <span class="work-tags">SVG · CSS · Brand motion</span>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-project="pulse" data-category="identity" style="--accent:#ff4fa3" role="button" tabindex="0" aria-haspopup="dialog">
+            <div class="work-preview preview-pulse" aria-hidden="true">
+              <svg class="pp-m" viewBox="0 0 200 200"><use href="#logo-m"/></svg>
+              <span class="pp-bar" style="--i:0"></span><span class="pp-bar" style="--i:1"></span><span class="pp-bar" style="--i:2"></span><span class="pp-bar" style="--i:3"></span><span class="pp-bar" style="--i:4"></span><span class="pp-bar" style="--i:5"></span><span class="pp-bar" style="--i:6"></span><span class="pp-bar" style="--i:7"></span>
+              <span class="preview-tag">IDENT · 06s</span>
+            </div>
+            <div class="work-meta">
+              <span class="work-cat">Айдентика</span>
+              <h3>PULSE — градиентный ритм</h3>
+              <p>Градиентная «M» реагирует на бит: амплитуда, эквалайзер и мягкое свечение.</p>
+              <span class="work-tags">Gradient · Audio-reactive concept</span>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-project="shift" data-category="type" style="--accent:#7c5cff" role="button" tabindex="0" aria-haspopup="dialog">
+            <div class="work-preview preview-shift" aria-hidden="true">
+              <span class="ps-word"><b style="--i:0">D</b><b style="--i:1">V</b><b style="--i:2">I</b><b style="--i:3">Z</b><b style="--i:4">H</b></span>
+              <span class="ps-word ghost"><b style="--i:0">D</b><b style="--i:1">V</b><b style="--i:2">I</b><b style="--i:3">Z</b><b style="--i:4">H</b></span>
+              <span class="ps-line"></span>
+              <span class="preview-tag">TYPE · 05s</span>
+            </div>
+            <div class="work-meta">
+              <span class="work-cat">Типографика</span>
+              <h3>SHIFT — кинетический набор</h3>
+              <p>Буквы меняют вес, наклон и трекинг, оставаясь читаемыми в любой фазе.</p>
+              <span class="work-tags">Kinetic type · Variable rhythm</span>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-project="signal" data-category="ui" style="--accent:#38d9ff" role="button" tabindex="0" aria-haspopup="dialog">
+            <div class="work-preview preview-signal" aria-hidden="true">
+              <div class="ps-card">
+                <span class="psu-head"><i></i><i></i><i></i></span>
+                <span class="psu-row"><em></em><b class="psu-toggle on"></b></span>
+                <span class="psu-row"><em></em><b class="psu-toggle"></b></span>
+                <span class="psu-chart"><i style="--h:40%"></i><i style="--h:70%"></i><i style="--h:55%"></i><i style="--h:90%"></i><i style="--h:65%"></i></span>
+                <span class="psu-btn"></span>
+              </div>
+              <span class="psu-cursor"></span>
+              <span class="preview-tag">UI · 07s</span>
+            </div>
+            <div class="work-meta">
+              <span class="work-cat">UI / Web</span>
+              <h3>SIGNAL — микроинтеракции</h3>
+              <p>Переключатели, графики и курсор: интерфейс отвечает на каждое действие.</p>
+              <span class="work-tags">Micro UX · Product motion</span>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-project="prism" data-category="3d" style="--accent:#ffb84d" role="button" tabindex="0" aria-haspopup="dialog">
+            <div class="work-preview preview-prism" aria-hidden="true">
+              <span class="pr-beam b1"></span><span class="pr-beam b2"></span><span class="pr-beam b3"></span>
+              <svg viewBox="0 0 200 200"><use href="#logo-triangle"/></svg>
+              <span class="pr-floor"></span>
+              <span class="preview-tag">3D LOOK · 08s</span>
+            </div>
+            <div class="work-meta">
+              <span class="work-cat">3D / Loops</span>
+              <h3>PRISM — свет и геометрия</h3>
+              <p>Треугольник MUFI в лучах: псевдо-объём, каустика и бесшовный поворот.</p>
+              <span class="work-tags">Light study · Seamless loop</span>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-project="flow" data-category="3d" style="--accent:#57e389" role="button" tabindex="0" aria-haspopup="dialog">
+            <div class="work-preview preview-flow" aria-hidden="true">
+              <span class="pf-dot" style="--i:0"></span><span class="pf-dot" style="--i:1"></span><span class="pf-dot" style="--i:2"></span><span class="pf-dot" style="--i:3"></span><span class="pf-dot" style="--i:4"></span><span class="pf-dot" style="--i:5"></span><span class="pf-dot" style="--i:6"></span><span class="pf-dot" style="--i:7"></span><span class="pf-dot" style="--i:8"></span><span class="pf-dot" style="--i:9"></span><span class="pf-dot" style="--i:10"></span><span class="pf-dot" style="--i:11"></span>
+              <span class="pf-line"></span>
+              <span class="preview-tag">GENERATIVE · 09s</span>
+            </div>
+            <div class="work-meta">
+              <span class="work-cat">3D / Loops</span>
+              <h3>FLOW — поле частиц</h3>
+              <p>Генеративный поток: частицы следуют невидимому полю и собираются в волну.</p>
+              <span class="work-tags">Particles · Procedural motion</span>
+            </div>
+          </article>
+        </div>
+        <p class="works-empty" id="works-empty" hidden>В этой категории пока пусто. Выберите другую.</p>
+      </div>
+    </section>
+
+    <section class="section lab" id="lab" data-section>
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Motion Lab</p>
+            <h2>Настрой поведение знака</h2>
+          </div>
+          <p class="section-note">Три знака из референсов, один живой стенд. Крутите параметры — результат обновляется сразу. Экспорт сохраняет текущее состояние в SVG.</p>
+        </div>
+
+        <div class="lab-layout reveal">
+          <div class="lab-stage" id="lab-stage">
+            <svg id="lab-svg" viewBox="0 0 400 400" role="img" aria-label="Интерактивный предпросмотр логотипа">
+              <defs>
+                <filter id="lab-glow-live" x="-60%" y="-60%" width="220%" height="220%">
+                  <feGaussianBlur id="lab-soft-blur" in="SourceGraphic" stdDeviation="0" result="soft"/>
+                  <feGaussianBlur id="lab-glow-blur" in="soft" stdDeviation="6" result="b"/>
+                  <feMerge><feMergeNode in="b"/><feMergeNode in="soft"/></feMerge>
+                </filter>
+                <symbol id="lab-m" viewBox="0 0 200 200">
+                  <path d="M38 158 V72 C38 48 58 42 70 62 L96 112 C100 120 104 120 108 112 L134 62 C146 42 166 48 166 72 V158"
+                        fill="none" stroke="currentColor" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+                </symbol>
+              </defs>
+              <rect width="400" height="400" fill="#0b0e14"/>
+              <g id="lab-grid" opacity=".35">
+                <path d="M0 100H400M0 200H400M0 300H400M100 0V400M200 0V400M300 0V400" stroke="#2a3140" stroke-width="1"/>
+                <circle cx="200" cy="200" r="150" fill="none" stroke="#2a3140"/>
+              </g>
+              <g id="lab-particles"></g>
+              <g id="lab-ghosts" opacity=".3">
+                <use id="lab-ghost-2" href="#logo-swirl" x="100" y="100" width="200" height="200"/>
+                <use id="lab-ghost-1" href="#logo-swirl" x="100" y="100" width="200" height="200"/>
+              </g>
+              <g id="lab-logo" filter="url(#lab-glow-live)">
+                <use id="lab-mark" href="#logo-swirl" x="100" y="100" width="200" height="200"/>
+              </g>
+            </svg>
+            <div class="lab-hud">
+              <span id="hud-fps">60 fps</span>
+              <span id="hud-speed">1.0×</span>
+              <span id="hud-count">16 частиц</span>
+            </div>
+          </div>
+
+          <aside class="lab-controls" aria-label="Параметры анимации">
+            <div class="lab-tabs" role="group" aria-label="Выбор знака">
+              <button class="lab-tab is-active" data-mark="logo-swirl" aria-pressed="true">Спираль</button>
+              <button class="lab-tab" data-mark="logo-triangle" aria-pressed="false">Треугольник</button>
+              <button class="lab-tab" data-mark="lab-m" aria-pressed="false">M-знак</button>
+            </div>
+
+            <label class="control">
+              <span>Скорость <output id="out-speed">1.0×</output></span>
+              <input type="range" id="ctl-speed" min="0.2" max="3" step="0.1" value="1">
+            </label>
+            <label class="control">
+              <span>Масштаб <output id="out-scale">1.00</output></span>
+              <input type="range" id="ctl-scale" min="0.5" max="1.5" step="0.05" value="1">
+            </label>
+            <label class="control">
+              <span>Свечение <output id="out-glow">45</output></span>
+              <input type="range" id="ctl-glow" min="0" max="100" step="1" value="45">
+            </label>
+            <label class="control">
+              <span>Шлейф <output id="out-trail">30</output></span>
+              <input type="range" id="ctl-trail" min="0" max="100" step="1" value="30">
+            </label>
+            <label class="control">
+              <span>Частицы <output id="out-particles">16</output></span>
+              <input type="range" id="ctl-particles" min="0" max="48" step="1" value="16">
+            </label>
+            <label class="control">
+              <span>Размытие <output id="out-blur">0.0</output></span>
+              <input type="range" id="ctl-blur" min="0" max="6" step="0.1" value="0">
+            </label>
+            <label class="control">
+              <span>Цвет</span>
+              <select id="ctl-theme">
+                <option value="#c8ff3d">Лайм</option>
+                <option value="#7c5cff">Фиолетовый</option>
+                <option value="#38d9ff">Циан</option>
+                <option value="#ff4fa3">Маджента</option>
+                <option value="#ffb84d">Янтарь</option>
+              </select>
+            </label>
+            <label class="control">
+              <span>Характер движения</span>
+              <select id="ctl-easing">
+                <option value="linear">Ровный</option>
+                <option value="sine" selected>Дышащий</option>
+                <option value="elastic">Упругий</option>
+              </select>
+            </label>
+
+            <div class="control-toggles">
+              <label class="toggle"><input type="checkbox" id="ctl-grid" checked><span>Сетка</span></label>
+              <label class="toggle"><input type="checkbox" id="ctl-wire"><span>Каркас</span></label>
+              <label class="toggle"><input type="checkbox" id="ctl-pause"><span>Пауза</span></label>
+            </div>
+
+            <div class="lab-actions">
+              <button class="btn btn-ghost btn-sm" id="lab-reset">Сброс</button>
+              <button class="btn btn-ghost btn-sm" id="lab-random">Случайно</button>
+              <button class="btn btn-primary btn-sm" id="lab-copy">Копировать SVG</button>
+              <button class="btn btn-primary btn-sm" id="lab-download">Скачать SVG</button>
+            </div>
+            <p class="lab-note">Экспорт — статичный SVG-кадр с текущим цветом, масштабом, поворотом, свечением и частицами.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="services" data-section>
+      <div class="container services-grid">
+        <div class="services-intro reveal">
+          <p class="eyebrow">Что я делаю</p>
+          <h2>От статичного знака до живой системы</h2>
+          <p>Беру идею, собираю визуальный язык и добавляю время: ритм, инерцию, реакцию на действие. На выходе — не просто ролик, а набор правил, по которым бренд двигается везде.</p>
+          <a class="btn btn-ghost" href="#contact">Запросить оценку</a>
+        </div>
+        <ol class="service-list">
+          <li class="service-row reveal">
+            <span class="service-num">01</span>
+            <div><h3>Motion-айдентика</h3><p>Логотип в движении, заставки, переходы, правила анимации для соцсетей и продукта.</p></div>
+            <span class="service-tags">Logo behaviour · Brand kits</span>
+          </li>
+          <li class="service-row reveal">
+            <span class="service-num">02</span>
+            <div><h3>Кинетическая типографика</h3><p>Титры, лирик-видео, промо-набор: текст как главный герой, а не подпись поверх фона.</p></div>
+            <span class="service-tags">Type in motion · Titles</span>
+          </li>
+          <li class="service-row reveal">
+            <span class="service-num">03</span>
+            <div><h3>3D и продуктовые лупы</h3><p>Короткие бесшовные ролики для лендингов, сторов и презентаций. Свет, материал, камера.</p></div>
+            <span class="service-tags">Loops · Product reveal</span>
+          </li>
+          <li class="service-row reveal">
+            <span class="service-num">04</span>
+            <div><h3>Веб-анимация и интерактив</h3><p>Скролл-сцены, микроинтеракции, SVG/Canvas-эффекты. Быстро, доступно, без лишних библиотек.</p></div>
+            <span class="service-tags">Web motion · Frontend</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section about" id="about" data-section>
+      <div class="container about-grid">
+        <div class="about-card reveal" aria-hidden="true">
+          <svg viewBox="0 0 200 200"><use href="#logo-m"/></svg>
+          <span class="about-badge">MUFI.DEV</span>
+        </div>
+        <div class="about-copy reveal">
+          <p class="eyebrow">Обо мне</p>
+          <h2>Дизайн, который умеет вести себя</h2>
+          <p>Я работаю на стыке моушн-дизайна и фронтенда. Люблю, когда форма объясняет функцию: знак раскрывает идею бренда, интерфейс подтверждает действие, а переход ведёт взгляд, а не отвлекает.</p>
+          <p>В работе опираюсь на три правила: смысл важнее эффекта, плавность важнее количества слоёв, доступность важнее вау-момента. Поэтому анимации здесь можно выключить одним переключателем, а тяжёлые видео заменены лёгкой графикой.</p>
+          <ul class="principles">
+            <li><b>Сначала ритм</b><span>Тайминг и easing до декора.</span></li>
+            <li><b>Лёгкие ассеты</b><span>SVG, CSS и локальные шрифты вместо мегабайтных видео.</span></li>
+            <li><b>Уважение к пользователю</b><span>Reduced motion, фокус с клавиатуры, читаемый контраст.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" data-section>
+      <div class="container">
+        <div class="contact-card reveal">
+          <div class="contact-glow" aria-hidden="true"></div>
+          <p class="eyebrow">Контакт</p>
+          <h2>Есть идея?<br><span class="grad">Заставим её двигаться.</span></h2>
+          <p>Расскажите о задаче в паре абзацев или соберите короткий бриф — так быстрее понять объём, сроки и бюджет.</p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" id="mail-link" href="mailto:hello@mufi.dev?subject=Проект%20для%20MUFI.DEV">hello@mufi.dev</a>
+            <button class="btn btn-ghost" id="copy-email">Скопировать почту</button>
+            <button class="btn btn-ghost" id="open-brief">Собрать бриф</button>
+          </div>
+          <p class="contact-note">Обычно отвечаю в течение пары дней. Бриф сохраняется локально и никуда не отправляется без вашего действия.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#top">
+        <svg viewBox="0 0 200 200" aria-hidden="true"><use href="#logo-swirl"/></svg>
+        <span>MUFI<b>.DEV</b></span>
+      </a>
+      <p>© <span id="year">2026</span> MUFI.DEV · HTML / CSS / JS · Cloudflare Pages</p>
+      <a class="to-top" href="#top">Наверх ↑</a>
+    </div>
+  </footer>
+
+  <!-- Модалка работы -->
+  <dialog class="project-dialog" id="project-dialog" aria-labelledby="project-title">
+    <button class="dialog-close" id="project-close" aria-label="Закрыть">×</button>
+    <div class="project-dialog-preview" id="project-preview"></div>
+    <div class="project-dialog-body">
+      <span class="work-cat" id="project-cat"></span>
+      <h3 id="project-title"></h3>
+      <p id="project-desc"></p>
+      <dl class="project-facts">
+        <div><dt>Роль</dt><dd id="project-role"></dd></div>
+        <div><dt>Инструменты</dt><dd id="project-tools"></dd></div>
+        <div><dt>Формат</dt><dd id="project-format"></dd></div>
+      </dl>
+      <div class="project-controls" aria-label="Управление анимацией">
+        <button class="btn btn-ghost btn-sm" id="project-play" aria-pressed="false">Пауза</button>
+        <button class="btn btn-ghost btn-sm" id="project-replay">Сначала</button>
+        <label class="inline-select">Скорость
+          <select id="project-rate">
+            <option value="0.5">0.5×</option>
+            <option value="1" selected>1×</option>
+            <option value="1.5">1.5×</option>
+            <option value="2">2×</option>
+          </select>
+        </label>
+      </div>
+      <div class="project-nav">
+        <button class="btn btn-ghost btn-sm" id="project-prev">← Предыдущая</button>
+        <button class="btn btn-ghost btn-sm" id="project-next">Следующая →</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Бриф -->
+  <dialog class="brief-dialog" id="brief-dialog" aria-labelledby="brief-title">
+    <button class="dialog-close" id="brief-close" aria-label="Закрыть">×</button>
+    <h3 id="brief-title">Короткий бриф</h3>
+    <p class="brief-lead">Заполните поля — получите текст письма и файл. Ничего не уходит на сервер.</p>
+    <form id="brief-form">
+      <label>Имя / компания<input name="name" required autocomplete="organization" placeholder="Как к вам обращаться"></label>
+      <label>Тип проекта
+        <select name="type">
+          <option>Motion-айдентика</option>
+          <option>Кинетическая типографика</option>
+          <option>3D / продуктовый луп</option>
+          <option>Веб-анимация</option>
+          <option>Другое</option>
+        </select>
+      </label>
+      <label>Бюджет
+        <select name="budget">
+          <option>До 50 000 ₽</option>
+          <option>50 000–150 000 ₽</option>
+          <option>150 000–300 000 ₽</option>
+          <option>300 000 ₽+</option>
+          <option>Обсудим</option>
+        </select>
+      </label>
+      <label>Сроки<input name="timeline" placeholder="Например: 3–4 недели"></label>
+      <label class="brief-wide">Задача<textarea name="task" rows="4" required placeholder="Что нужно сделать, где будет использоваться, есть ли референсы"></textarea></label>
+      <div class="brief-actions">
+        <button type="submit" class="btn btn-primary">Скачать .txt</button>
+        <button type="button" class="btn btn-ghost" id="brief-copy">Скопировать текст</button>
+        <a class="btn btn-ghost" id="brief-mail" href="mailto:hello@mufi.dev">Открыть почту</a>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <style>.loader{display:none}.reveal{opacity:1;transform:none}.hero-title i{transform:none}</style>
+    <p class="noscript">Для фильтров, Motion Lab и модальных окон включите JavaScript. Контент остаётся доступным.</p>
+  </noscript>
+</body>
+</html>
