@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" rx="44" fill="#07080b"/>
+  <defs><path id="b" d="M100 16 C146 16 184 54 184 100 C184 141 156 175 118 183 C146 165 164 135 164 100 C164 58 136 24 100 16 Z"/></defs>
+  <g fill="#c8ff3d">
+    <use href="#b" transform="rotate(0 100 100)"/>
+    <use href="#b" transform="rotate(38 100 100) translate(100 100) scale(.92) translate(-100 -100)"/>
+    <use href="#b" transform="rotate(76 100 100) translate(100 100) scale(.84) translate(-100 -100)"/>
+    <use href="#b" transform="rotate(114 100 100) translate(100 100) scale(.76) translate(-100 -100)"/>
+    <use href="#b" transform="rotate(152 100 100) translate(100 100) scale(.68) translate(-100 -100)"/>
+    <use href="#b" transform="rotate(190 100 100) translate(100 100) scale(.60) translate(-100 -100)"/>
+    <use href="#b" transform="rotate(228 100 100) translate(100 100) scale(.52) translate(-100 -100)"/>
+    <use href="#b" transform="rotate(266 100 100) translate(100 100) scale(.44) translate(-100 -100)"/>
+    <use href="#b" transform="rotate(304 100 100) translate(100 100) scale(.36) translate(-100 -100)"/>
+  </g>
+</svg>

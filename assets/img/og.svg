@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c8ff3d"/><stop offset=".45" stop-color="#38d9ff"/><stop offset=".75" stop-color="#7c5cff"/><stop offset="1" stop-color="#ff4fa3"/>
+    </linearGradient>
+    <radialGradient id="bg" cx="30%" cy="20%" r="90%">
+      <stop offset="0" stop-color="#151a24"/><stop offset="1" stop-color="#07080b"/>
+    </radialGradient>
+    <path id="b" d="M100 16 C146 16 184 54 184 100 C184 141 156 175 118 183 C146 165 164 135 164 100 C164 58 136 24 100 16 Z"/>
+    <symbol id="swirl" viewBox="0 0 200 200">
+      <use href="#b" transform="rotate(0 100 100)"/>
+      <use href="#b" transform="rotate(38 100 100) translate(100 100) scale(.92) translate(-100 -100)"/>
+      <use href="#b" transform="rotate(76 100 100) translate(100 100) scale(.84) translate(-100 -100)"/>
+      <use href="#b" transform="rotate(114 100 100) translate(100 100) scale(.76) translate(-100 -100)"/>
+      <use href="#b" transform="rotate(152 100 100) translate(100 100) scale(.68) translate(-100 -100)"/>
+      <use href="#b" transform="rotate(190 100 100) translate(100 100) scale(.60) translate(-100 -100)"/>
+      <use href="#b" transform="rotate(228 100 100) translate(100 100) scale(.52) translate(-100 -100)"/>
+      <use href="#b" transform="rotate(266 100 100) translate(100 100) scale(.44) translate(-100 -100)"/>
+      <use href="#b" transform="rotate(304 100 100) translate(100 100) scale(.36) translate(-100 -100)"/>
+    </symbol>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="980" cy="120" r="260" fill="#7c5cff" opacity=".18"/>
+  <circle cx="180" cy="560" r="240" fill="#c8ff3d" opacity=".12"/>
+  <use href="#swirl" x="820" y="165" width="300" height="300" fill="#f4f6fb"/>
+  <text x="80" y="250" font-family="Unbounded, Manrope, sans-serif" font-size="76" font-weight="800" fill="#f4f6fb">Идеи, которые</text>
+  <text x="80" y="345" font-family="Unbounded, Manrope, sans-serif" font-size="76" font-weight="800" fill="url(#g)">движутся.</text>
+  <text x="80" y="430" font-family="Manrope, sans-serif" font-size="28" fill="#a7b0c0">MUFI.DEV · Motion Design · Creative Development</text>
+  <rect x="80" y="480" width="180" height="6" rx="3" fill="url(#g)"/>
+</svg>
